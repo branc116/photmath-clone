@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photomath clone</title>
+</head>
+<body>
+<div id="info" class="text-center" data-prefix="">
+  OpenCV.js is loading...
+</div>
+  <canvas class="center-block" id="canvasOutput" width=320 height=240></canvas>
+  <p id="outString"></p>
+  <div class="invisible">
+    <video id="video" class="hidden">Your browser does not support the video tag.</video>
+  </div>
+</div>
+<!-- <script src="node_modules/@tensorflow/tfjs/dist/tf.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.8.2/dist/tf.min.js"></script>
+<script src="opencv.js/samples/libs/adapter-latest.js"></script>
+<script src="opencv.js/samples/libs/stats.min.js"></script>
+<script src="opencv.js/samples/libs/dat.gui.min.js"></script>
+<script src="opencv.js/samples/libs/utils.js"></script>
+<script>
+var featuresReady = checkFeatures(document.getElementById("info"), {webrtc: true, wasm: true});
+</script>
+<script src="index.js" ></script>
+<script>
+var Module = {
+  wasmBinaryFile: 'opencv.js/build/wasm/opencv_js.wasm',
+  _main: function() {opencvIsReady(1);}
+};
+</script>
+<script async src="opencv.js/build/wasm/opencv.js"></script>
+</body>
+</html>
