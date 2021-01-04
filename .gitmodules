@@ -1,0 +1,3 @@
+[submodule "web/opencv.js"]
+	path = web/opencv.js
+	url = https://github.com/huningxin/opencv.js
